@@ -1,0 +1,30 @@
+name: Set up scaffold
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: Source repo
+        default: https://github.com/microsoft/BotBuilder-Samples.git
+        required: true
+      folder:
+        description: Source folder
+        default: samples/javascript_nodejs/02.echo-bot
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Clone repository
+        run: |
+          git clone ${{ github.event.inputs.repo }} /tmp/samples-repo
+          ls -laR /tmp/samples-repo/${{ github.event.inputs.folder }}
+
+      - name:
+        run: |
+          cp -r /tmp/samples-repo/${{ github.event.inputs.folder }} .
+          ls -laR
