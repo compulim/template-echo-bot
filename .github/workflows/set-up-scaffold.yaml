@@ -47,6 +47,9 @@ jobs:
           unzip /tmp/main.zip */${{ github.event.inputs.folder }}/* -d /tmp/samples-repo/
           cp -r /tmp/samples-repo/${{ github.event.inputs.repo-name }}-${{ github.event.inputs.repo-branch }}/${{ github.event.inputs.folder }}/* .
 
+      # Run "npm install" to generate the package-lock.json
+      - run: npm install
+
       - name: Remove set-up-scaffold.yaml
         run: rm .github/workflows/set-up-scaffold.yaml
 
