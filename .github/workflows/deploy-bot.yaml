@@ -28,7 +28,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build --if-present
-      # - run: npm test --if-present
+      # - run: npm test --if-present # Currently, bot samples will fail when running `npm test`.
       - run: npm pack
       - run: tar xvf *.tgz
 

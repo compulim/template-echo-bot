@@ -1,6 +1,6 @@
 # template-echo-bot
 
-This repo is for quickly set up a Node.js Web App Bot using [Bot Framework Samples](https://github.com/microsoft/BotFramework-Samples/).
+This repo is for quickly set up a Node.js Web App Bot. It will clone the [Bot Builder Samples](https://github.com/microsoft/BotBuilder-Samples/) and add GitHub Action to deploy your bot.
 
 ## Steps
 
