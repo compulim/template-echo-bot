@@ -19,6 +19,10 @@ on:
         description: Samples folder
         default: samples/javascript_nodejs/02.echo-bot
         required: true
+      target-branch:
+        description: Target new branch
+        default: test
+        required: true
 
 jobs:
   setup:
@@ -27,9 +31,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Create new branch "${{ github.event.inputs.target-branch }}"
+        run: git checkout -b ${{ github.event.inputs.target-branch }}
+
       - name: Clone repository
         run: |
           curl -Lo /tmp/main.zip https://github.com/${{ github.event.inputs.repo-owner }}/${{ github.event.inputs.repo-name }}/archive/refs/heads/${{ github.event.inputs.repo-branch }}.zip
           unzip /tmp/main.zip */${{ github.event.inputs.folder }}/* -d /tmp/samples-repo/
           cp -r /tmp/samples-repo/${{ github.event.inputs.repo-name }}-${{ github.event.inputs.repo-branch }}/${{ github.event.inputs.folder }}/* .
-          ls -lAR
+
+      - name: Commit and push
+        run: |
+          git add --all
+          git commit --message "Initial clone"
+          git push -u origin ${{ github.event.inputs.target-branch }}
