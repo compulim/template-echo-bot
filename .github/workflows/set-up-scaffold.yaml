@@ -7,18 +7,22 @@ on:
         description: Samples repo owner
         default: microsoft
         required: true
+
       repo-name:
         description: Samples repo owner
         default: BotBuilder-Samples
         required: true
+
       repo-branch:
         description: Samples repo branch
         default: main
         required: true
+
       folder:
         description: Samples folder
         default: samples/javascript_nodejs/02.echo-bot
         required: true
+
       target-branch:
         description: Target new branch
         default: main
@@ -33,8 +37,8 @@ jobs:
 
       - name: Configure user profile
         run: |
-          git config user.email "@compulim"
-          git config user.name "Scaffold setup"
+          git config user.email "${{ github.actor }}"
+          git config user.name "${{ github.actor }}"
 
       - name: Create new branch "${{ github.event.inputs.target-branch }}"
         # Only create the new branch if we are not replacing ourselves.
@@ -51,9 +55,7 @@ jobs:
       - run: npm install
 
       - name: Set up GitHub Actions
-        run: |
-          rm -r .github/workflows/
-          mv .github/workflows.scaffold .github/workflows
+        run: rm .github/workflows/set-up-scaffold.yaml
 
       - name: Commit and push
         run: |
