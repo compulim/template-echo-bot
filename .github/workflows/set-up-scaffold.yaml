@@ -31,5 +31,5 @@ jobs:
         run: |
           curl -Lo /tmp/main.zip https://github.com/${{ github.event.inputs.repo-owner }}/${{ github.event.inputs.repo-name }}/archive/refs/heads/${{ github.event.inputs.repo-branch }}.zip
           unzip /tmp/main.zip */${{ github.event.inputs.folder }}/* -d /tmp/samples-repo/
-          cp -r /tmp/samples-repo/${{ github.event.inputs.repo-name }}-${{ github.event.inputs.repo-branch }}/${{ github.event.inputs.folder }}/ .
-          ls -laR
+          cp -r /tmp/samples-repo/${{ github.event.inputs.repo-name }}-${{ github.event.inputs.repo-branch }}/${{ github.event.inputs.folder }}/* .
+          ls -lAR
