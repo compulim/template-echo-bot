@@ -50,8 +50,10 @@ jobs:
       # Run "npm install" to generate the package-lock.json
       - run: npm install
 
-      - name: Remove set-up-scaffold.yaml
-        run: rm .github/workflows/set-up-scaffold.yaml
+      - name: Set up GitHub Actions
+        run: |
+          rm -r .github/workflows/
+          mv .github/workflows.scaffold .github/workflows
 
       - name: Commit and push
         run: |
