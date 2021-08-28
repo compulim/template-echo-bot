@@ -4,7 +4,9 @@ This repo is for quickly set up an Azure bot with Node.js Web App. It will clone
 
 ## Why this is needed?
 
-[Bot Builder Samples](https://github.com/microsoft/BotBuilder-Samples/) repository contains great samples. But it is a mono-repository and need extra tweaks to make it deploy from GitHub.
+[Bot Builder Samples](https://github.com/microsoft/BotBuilder-Samples/) repository contains great samples. But it is a mono-repository and need extra tweaks to deploy code using GitHub Actions.
+
+Using GitHub Actions, you can easily modify your bot code and re-deploy automatically.
 
 With this template repository, it will simplify deploying a bot from samples to your environment:
 
