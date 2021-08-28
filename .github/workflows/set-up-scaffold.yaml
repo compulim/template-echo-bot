@@ -52,7 +52,10 @@ jobs:
           cp -r /tmp/samples-repo/${{ github.event.inputs.repo-name }}-${{ github.event.inputs.repo-branch }}/${{ github.event.inputs.folder }}/* .
 
       # Run "npm install" to generate the package-lock.json
-      - run: npm install
+      - name: Generate package-lock.json with audit fix
+        run: |
+          npm install
+          npm audit fix
 
       - name: Set up GitHub Actions
         run: rm .github/workflows/set-up-scaffold.yaml
