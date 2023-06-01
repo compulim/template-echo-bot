@@ -27,3 +27,17 @@ With this template repository, it will simplify deploying a bot from samples to 
 1. [Navigate to the scaffold workflow](../../actions/workflows/set-up-scaffold.yaml)
 1. Click "Run workflow" to set up the scaffold
 1. [Modify `bot.js` to trigger the first deployment](../../edit/main/bot.js)
+
+## Application settings
+
+Please refer to [this article](https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=multitenant%2Caadv2%2Cjavascript#bot-identity-information) on adding application settings to Azure Web App.
+
+## Direct Line App Service Extension
+
+Please refer to [this article](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-channel-directline-extension-node-bot?view=azure-bot-service-4.0) on adding application settings to Azure Web App.
+
+Also, add the following code, in additional to the code snippet in the article:
+
+```ts
+const { AuthenticationConstants } = require('botframework-connector');
+```
