@@ -35,6 +35,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
       - name: Configure user profile
         run: |
           git config user.email "${{ format('@{0}', github.actor) }}"
@@ -54,7 +59,7 @@ jobs:
       # Run "npm install" to generate the package-lock.json
       - name: Generate package-lock.json with audit fix
         run: |
-          npm install
+          npm install botbuilder@latest
           npm audit fix
 
       - name: Set up GitHub Actions
