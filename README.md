@@ -30,9 +30,22 @@ With this template repository, it will simplify deploying a bot from samples to 
 
 ## Application settings
 
+In general, you should set the following environment variables in your Azure Web App > Configuration > Application Settings.
+
+| Name | Value |
+| - | - |
+| `DIRECTLINE_EXTENSION_VERSION` | `latest` |
+| `DirectLineExtensionKey` | |
+| `MicrosoftAppId` | |
+| `MicrosoftAppPassword` | |
+| `MicrosoftAppType` | `MultiTenant` |
+| `WEBSITE_RUN_FROM_PACKAGE` | `1` |
+
+### General
+
 Please refer to [this article](https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=multitenant%2Caadv2%2Cjavascript#bot-identity-information) on adding application settings to Azure Web App.
 
-## Direct Line App Service Extension
+### Direct Line App Service Extension
 
 Please refer to [this article](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-channel-directline-extension-node-bot?view=azure-bot-service-4.0) on adding application settings to Azure Web App.
 
