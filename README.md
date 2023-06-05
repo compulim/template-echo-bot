@@ -32,14 +32,15 @@ With this template repository, it will simplify deploying a bot from samples to 
 
 In general, you should set the following environment variables in your Azure Web App > Configuration > Application Settings.
 
-| Name | Value |
-| - | - |
+| Name | Value | Notes |
+| - | - | - |
 | `DIRECTLINE_EXTENSION_VERSION` | `latest` |
-| `DirectLineExtensionKey` | |
-| `MicrosoftAppId` | |
-| `MicrosoftAppPassword` | |
-| `MicrosoftAppType` | `MultiTenant` |
-| `WEBSITE_RUN_FROM_PACKAGE` | `1` |
+| `DirectLineExtensionKey` | | Azure Bot > Channels > Direct Line > App Service extension |
+| `MicrosoftAppId` | | Azure Bot > Configuration > Microsoft App ID |
+| `MicrosoftAppPassword` | | Azure Bot > Configuration > Microsoft App ID > Manage Password |
+| `MicrosoftAppType` | `MultiTenant` | |
+| `WEBSITE_NODE_DEFAULT_VERSION` | `~16` | TBD: Should bump to `~18` |
+| `WEBSITE_RUN_FROM_PACKAGE` | `1` | Enable faster deployment |
 
 ### General
 
