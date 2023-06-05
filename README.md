@@ -21,6 +21,7 @@ With this template repository, it will simplify deploying a bot from samples to 
 1. Set up your Web App
    1. (Optional) Set the application settings `WEBSITE_RUN_FROM_PACKAGE=1` will speed up deployment significantly
    1. Download the publish profile
+   1. Enable Web Socket by toggling Configruation > General settings > Web sockets
 1. [Fork this repo via the "Use this template" button](https://github.com/compulim/template-echo-bot/generate)
 1. [Add a new secret](../../settings/secrets/actions/new) named `PUBLISH_PROFILE`
    - Paste the content of the publish profile file you downloaded from step 1 into the value field
